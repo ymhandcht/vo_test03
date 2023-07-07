@@ -1,0 +1,28 @@
+{
+    "configurations": [
+        {
+            "browse": {
+                "databaseFilename": "${default}",
+                "limitSymbolsToIncludedHeaders": false
+            },
+            "includePath": [
+                "/opt/ros/noetic/include/**",
+                "/home/action/vo_test03/src/visual_odometry/include/**",
+                "/usr/include/**",
+                "/usr/local/lib/**",
+                "/home/action/vo_test03/src/visual_odometry/include/visual_odometry/**",
+                "/usr/local/include/**",
+                "/home/action/opencv-4.5.4/**",
+                "/usr/local/cuda-11.4/targets/x86_64-linux/include/*",
+                "/home/action/vo_test03/src/visual_odometry/include/**",
+                "/home/action/vo_test03/src/visual_odometry/IMU/**"
+            ],
+            "name": "ROS",
+            "intelliSenseMode": "gcc-x64",
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "gnu11",
+            "cppStandard": "c++17"
+        }
+    ],
+    "version": 4
+}

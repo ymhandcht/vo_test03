@@ -1,0 +1,2 @@
+visual_odometry
+-DCATKIN_DEVEL_PREFIX=/home/action/vo_test03/devel -DCMAKE_INSTALL_PREFIX=/home/action/vo_test03/install -G Unix Makefiles

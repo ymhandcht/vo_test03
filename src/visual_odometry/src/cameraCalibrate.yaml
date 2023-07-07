@@ -1,0 +1,96 @@
+[image]
+
+width
+1280
+
+height
+1024
+
+[narrow_stereo]
+
+camera matrix
+1046.657559 0.000000 658.051030
+0.000000 1046.440390 525.818598
+0.000000 0.000000 1.000000
+
+distortion
+-0.107739 0.100439 -0.001195 -0.000826 0.000000
+
+rectification
+1.000000 0.000000 0.000000
+0.000000 1.000000 0.000000
+0.000000 0.000000 1.000000
+
+projection
+1019.815308 0.000000 656.725249 0.000000
+0.000000 1024.947998 525.271053 0.000000
+0.000000 0.000000 1.000000 0.000000
+
+待解决问题：
+1. 角度和坐标在某个范围波动时应该认定为没有发生变化 可以参考3sigma原则
+2. 角度和坐标融合获得真实坐标
+3. imu数据处理需要进一步改进
+4. 室外测试
+5. 灯光需要进一步改进
+
+
+
+
+不用cuda跑的程序
+        
+        // auto start = std::chrono::steady_clock::now();
+        // mindvision.updateImage();
+        // //进行特征匹配
+        // orb_features orbFeatures(image1,image2);
+        // orbFeatures.orb_features_matching();
+        // auto end = std::chrono::steady_clock::now();
+        // auto time3 = chrono::duration_cast<microseconds>(end - start);
+        // //cout << "特征匹配总用时:" << time3.count() << endl;
+        // // 创建计算新坐标对象
+        // CoordCaculate cc;
+        // cc.initCoordCaculate();
+        // //将匹配的特征点放到容器里 分别存放第一幅和第二幅图像匹配的特征点
+        // cc.storageFeaturePoints(orbFeatures.matches,orbFeatures.keyPoints_1,orbFeatures.keyPoints_2);
+        // cc.getAllMappedPoints();
+        // deque<Point3f> result = cc.mappedPoints;
+        // cc.filterMappedPoints();
+        // Point3f coord = getNowCoord(lastcastCoord,cc.filterPoints);
+        // realCoor+=coord;  //得到真实坐标
+
+        // cc.getAllRevolveAngles();
+        // cc.filterAngles();
+        // angle += cc.angleResult;
+
+        // cout << "当前坐标为：" << realCoor << " 当前角度是:" << angle << endl;
+        // // 更新图像
+        // // imshow("pic",image1);
+        // image2 = image1;
+        // image1 = mindvision.dstImage;
+
+   Mat image1 = imread("/home/action/vo_test03/src/pictureRevolve/2.jpg");
+        Mat image2 = imread("/home/action/vo_test03/src/pictureRevolve/3.jpg");
+        orb_features orbFeatures(image1,image2);
+        orbFeatures.orb_features_matching();
+        CoordCaculate cc;
+        cc.initCoordCaculate();
+        cc.storageFeaturePoints(orbFeatures.matches,orbFeatures.keyPoints_1,orbFeatures.keyPoints_2);
+        cc.getAllRevolveAngles();
+        cc.filterAngles();
+        cout << "angle = " << cc.angleResult << endl;
+        waitKey(0);
+
+// // 相机内参和畸变参数
+// Mat cameraMatrix = (Mat_<double>(3,3)<<1038.445291,0.000000,660.017113,0.000000,1038.776144,530.520263,0.000000,0.000000,1.000000);
+// Mat distortionMatrix = (Mat_<double>(1,5)<<-0.101756,0.086948,0.000260,0.000568,0.000000);
+
+// void distortionCorrection(Mat &inputImage,Mat &outputImage)
+// {
+//     undistort(inputImage,outputImage,cameraMatrix,distortionMatrix);
+// }
+
+
+//两个现象（问题） 1.两个方向计算得到位移不同 2.循环体内两个方向相差更大100mm
+
+
+//imu接收数据慢，实际问题应该是在while循环里面接收慢 可能是时序问题 待解决
+//imu数据处理要自己写

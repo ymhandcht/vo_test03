@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/action/vo_test03/install/setup.sh

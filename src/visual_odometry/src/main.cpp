@@ -1,14 +1,25 @@
-// #include<ros/ros.h>
-// #include<orb_features.hpp>
-// #include<coordCaculate.h>
-// #include<mindVision_init.h>
-// #include<iostream>
-// #include<orb_features_cuda.h>
-// #include<opencv2/imgproc/imgproc.hpp>
-// #include<chrono>
-// using namespace std;
-// using namespace std::chrono;
+#include<ros/ros.h>
+#include<orb_features.hpp>
+#include<coordCaculate.h>
+#include<mindVision_init.h>
+#include<iostream>
+#include<orb_features_cuda.h>
+#include<opencv2/imgproc/imgproc.hpp>
+#include<chrono>
+using namespace std;
+using namespace std::chrono;
 
+/*PnP测试程序*/
+// int main(int argc,char **argv)
+// {
+//     ros::init(argc,argv,"main");
+//     Mat image1 = imread("/home/action/vo_test03/src/picture1/1.jpg");
+//     Mat image2 = imread("/home/action/vo_test03/src/picture1/2.jpg");
+
+
+
+  
+// }
 // bool nIfisCorrect(double n)
 // {
 //   return (n > 0 && abs(1 - n) <= 0.2) ? true : false;
@@ -166,42 +177,42 @@
 
 // /*采集图像程序*/
 
-// // int main(int argc,char **argv)
-// // {
-// //   ros::init(argc,argv,"main");
-// //   int picNum= 24;
-// //   string picName = "";
+int main(int argc,char **argv)
+{
+  ros::init(argc,argv,"main");
+  int picNum= 101;
+  string picName = "";
 
-// //   MindVisionInit mindvision;
-// //   mindvision.init();
+  MindVisionInit mindvision;
+  mindvision.init();
 
-// //   while(true)
-// //   {
-// //     //auto begin = std::chrono::steady_clock::now();
-// //     mindvision.updateImage();
-// //     imshow("src", mindvision.dstImage);
+  while(true)
+  {
+    //auto begin = std::chrono::steady_clock::now();
+    mindvision.updateImage();
+    imshow("src", mindvision.dstImage);
 
-// //     //auto start = std::chrono::steady_clock::now();
-// //     //cout << "更新图像用时：" << chrono::duration_cast<microseconds>(start - begin).count() << endl;
-// //     // waitKey(2000);
-// //     // cout << "if save this picture? 1 yes others no" << endl;
-// //     // int flag;
-// //     // cin >> flag;
-// //     // if(flag == 1)
-// //     // {
-// //     //   picNum++;
-// //     //   picName = "/home/action/vo_test03/src/picture1/"+std::to_string(picNum)+".jpg";
-// //     //   imwrite(picName,mindvision.dstImage);
-// //     // }
-// //     // else
-// //     //   continue;
-// //   }
+    //auto start = std::chrono::steady_clock::now();
+    //cout << "更新图像用时：" << chrono::duration_cast<microseconds>(start - begin).count() << endl;
+    waitKey(1000);
+    cout << "if save this picture? 1 yes others no" << endl;
+    int flag;
+    cin >> flag;
+    if(flag == 1)
+    {
+      picNum++;
+      picName = "/home/action/vo_test03/src/picture1/"+std::to_string(picNum)+".jpg";
+      imwrite(picName,mindvision.dstImage);
+    }
+    else
+      continue;
+  }
 
   
 
 
-// //   return 0;
-// // }
+  return 0;
+}
 // // #define a 0.785421
 // // int main(int argc,char**argv)
 // // {

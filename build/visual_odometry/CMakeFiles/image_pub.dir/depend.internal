@@ -99,7 +99,6 @@ visual_odometry/CMakeFiles/image_pub.dir/src/CameraParameter.cpp.o
  /usr/local/include/opencv4/opencv2/core/utils/tls.hpp
  /usr/local/include/opencv4/opencv2/core/version.hpp
  /usr/local/include/opencv4/opencv2/core/vsx_utils.hpp
- /usr/local/include/opencv4/opencv2/cvconfig.h
  /usr/local/include/opencv4/opencv2/dnn.hpp
  /usr/local/include/opencv4/opencv2/dnn/dict.hpp
  /usr/local/include/opencv4/opencv2/dnn/dnn.hpp
@@ -280,7 +279,6 @@ visual_odometry/CMakeFiles/image_pub.dir/src/image_pub.cpp.o
  /usr/local/include/opencv4/opencv2/core/utils/tls.hpp
  /usr/local/include/opencv4/opencv2/core/version.hpp
  /usr/local/include/opencv4/opencv2/core/vsx_utils.hpp
- /usr/local/include/opencv4/opencv2/cvconfig.h
  /usr/local/include/opencv4/opencv2/dnn.hpp
  /usr/local/include/opencv4/opencv2/dnn/dict.hpp
  /usr/local/include/opencv4/opencv2/dnn/dnn.hpp

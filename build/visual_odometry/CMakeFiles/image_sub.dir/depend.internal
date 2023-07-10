@@ -161,7 +161,6 @@ visual_odometry/CMakeFiles/image_sub.dir/src/CameraParameter.cpp.o
  /usr/local/include/opencv4/opencv2/core/utils/tls.hpp
  /usr/local/include/opencv4/opencv2/core/version.hpp
  /usr/local/include/opencv4/opencv2/core/vsx_utils.hpp
- /usr/local/include/opencv4/opencv2/cvconfig.h
  /usr/local/include/opencv4/opencv2/dnn.hpp
  /usr/local/include/opencv4/opencv2/dnn/dict.hpp
  /usr/local/include/opencv4/opencv2/dnn/dnn.hpp
@@ -475,8 +474,10 @@ visual_odometry/CMakeFiles/image_sub.dir/src/image_sub.cpp.o
  /home/action/vo_test03/src/visual_odometry/include/visual_odometry/coordCaculate.h
  /home/action/vo_test03/src/visual_odometry/include/visual_odometry/imu.h
  /home/action/vo_test03/src/visual_odometry/include/visual_odometry/mindVision_init.h
+ /home/action/vo_test03/src/visual_odometry/include/visual_odometry/orb_extractor1.h
  /home/action/vo_test03/src/visual_odometry/include/visual_odometry/orb_features.hpp
  /home/action/vo_test03/src/visual_odometry/include/visual_odometry/orb_features_cuda.h
+ /home/action/vo_test03/src/visual_odometry/include/visual_odometry/vfc.h
  /home/action/vo_test03/src/visual_odometry/src/image_sub.cpp
  /opt/ros/noetic/include/image_transport/camera_publisher.h
  /opt/ros/noetic/include/image_transport/camera_subscriber.h
@@ -613,6 +614,7 @@ visual_odometry/CMakeFiles/image_sub.dir/src/image_sub.cpp.o
  /usr/local/include/opencv4/opencv2/core/bufferpool.hpp
  /usr/local/include/opencv4/opencv2/core/check.hpp
  /usr/local/include/opencv4/opencv2/core/core.hpp
+ /usr/local/include/opencv4/opencv2/core/core_c.h
  /usr/local/include/opencv4/opencv2/core/cuda.hpp
  /usr/local/include/opencv4/opencv2/core/cuda.inl.hpp
  /usr/local/include/opencv4/opencv2/core/cuda_stream_accessor.hpp
@@ -637,6 +639,7 @@ visual_odometry/CMakeFiles/image_sub.dir/src/image_sub.cpp.o
  /usr/local/include/opencv4/opencv2/core/saturate.hpp
  /usr/local/include/opencv4/opencv2/core/traits.hpp
  /usr/local/include/opencv4/opencv2/core/types.hpp
+ /usr/local/include/opencv4/opencv2/core/types_c.h
  /usr/local/include/opencv4/opencv2/core/utility.hpp
  /usr/local/include/opencv4/opencv2/core/utils/instrumentation.hpp
  /usr/local/include/opencv4/opencv2/core/utils/tls.hpp
@@ -693,7 +696,10 @@ visual_odometry/CMakeFiles/image_sub.dir/src/image_sub.cpp.o
  /usr/local/include/opencv4/opencv2/highgui/highgui.hpp
  /usr/local/include/opencv4/opencv2/imgcodecs.hpp
  /usr/local/include/opencv4/opencv2/imgproc.hpp
+ /usr/local/include/opencv4/opencv2/imgproc/imgproc.hpp
+ /usr/local/include/opencv4/opencv2/imgproc/imgproc_c.h
  /usr/local/include/opencv4/opencv2/imgproc/segmentation.hpp
+ /usr/local/include/opencv4/opencv2/imgproc/types_c.h
  /usr/local/include/opencv4/opencv2/ml.hpp
  /usr/local/include/opencv4/opencv2/ml/ml.inl.hpp
  /usr/local/include/opencv4/opencv2/objdetect.hpp
@@ -720,6 +726,52 @@ visual_odometry/CMakeFiles/image_sub.dir/src/image_sub.cpp.o
  /usr/local/include/opencv4/opencv2/videoio.hpp
  /usr/local/include/opencv4/opencv2/xfeatures2d.hpp
  /usr/local/include/opencv4/opencv2/xfeatures2d/nonfree.hpp
+visual_odometry/CMakeFiles/image_sub.dir/src/orb_extractor.cpp.o
+ /home/action/vo_test03/src/visual_odometry/include/visual_odometry/orb_extractor1.h
+ /home/action/vo_test03/src/visual_odometry/src/orb_extractor.cpp
+ /usr/local/include/opencv4/opencv2/core.hpp
+ /usr/local/include/opencv4/opencv2/core/base.hpp
+ /usr/local/include/opencv4/opencv2/core/bufferpool.hpp
+ /usr/local/include/opencv4/opencv2/core/check.hpp
+ /usr/local/include/opencv4/opencv2/core/core.hpp
+ /usr/local/include/opencv4/opencv2/core/cv_cpu_dispatch.h
+ /usr/local/include/opencv4/opencv2/core/cv_cpu_helper.h
+ /usr/local/include/opencv4/opencv2/core/cvdef.h
+ /usr/local/include/opencv4/opencv2/core/cvstd.hpp
+ /usr/local/include/opencv4/opencv2/core/cvstd.inl.hpp
+ /usr/local/include/opencv4/opencv2/core/cvstd_wrapper.hpp
+ /usr/local/include/opencv4/opencv2/core/fast_math.hpp
+ /usr/local/include/opencv4/opencv2/core/hal/interface.h
+ /usr/local/include/opencv4/opencv2/core/hal/msa_macros.h
+ /usr/local/include/opencv4/opencv2/core/mat.hpp
+ /usr/local/include/opencv4/opencv2/core/mat.inl.hpp
+ /usr/local/include/opencv4/opencv2/core/matx.hpp
+ /usr/local/include/opencv4/opencv2/core/neon_utils.hpp
+ /usr/local/include/opencv4/opencv2/core/operations.hpp
+ /usr/local/include/opencv4/opencv2/core/optim.hpp
+ /usr/local/include/opencv4/opencv2/core/ovx.hpp
+ /usr/local/include/opencv4/opencv2/core/persistence.hpp
+ /usr/local/include/opencv4/opencv2/core/saturate.hpp
+ /usr/local/include/opencv4/opencv2/core/traits.hpp
+ /usr/local/include/opencv4/opencv2/core/types.hpp
+ /usr/local/include/opencv4/opencv2/core/utility.hpp
+ /usr/local/include/opencv4/opencv2/core/utils/instrumentation.hpp
+ /usr/local/include/opencv4/opencv2/core/utils/tls.hpp
+ /usr/local/include/opencv4/opencv2/core/version.hpp
+ /usr/local/include/opencv4/opencv2/core/vsx_utils.hpp
+ /usr/local/include/opencv4/opencv2/features2d.hpp
+ /usr/local/include/opencv4/opencv2/features2d/features2d.hpp
+ /usr/local/include/opencv4/opencv2/flann/config.h
+ /usr/local/include/opencv4/opencv2/flann/defines.h
+ /usr/local/include/opencv4/opencv2/flann/miniflann.hpp
+ /usr/local/include/opencv4/opencv2/highgui.hpp
+ /usr/local/include/opencv4/opencv2/highgui/highgui.hpp
+ /usr/local/include/opencv4/opencv2/imgcodecs.hpp
+ /usr/local/include/opencv4/opencv2/imgproc.hpp
+ /usr/local/include/opencv4/opencv2/imgproc/imgproc.hpp
+ /usr/local/include/opencv4/opencv2/imgproc/segmentation.hpp
+ /usr/local/include/opencv4/opencv2/opencv_modules.hpp
+ /usr/local/include/opencv4/opencv2/videoio.hpp
 visual_odometry/CMakeFiles/image_sub.dir/src/orb_features_cuda.cpp.o
  /home/action/vo_test03/src/visual_odometry/include/visual_odometry/CameraApi.h
  /home/action/vo_test03/src/visual_odometry/include/visual_odometry/CameraDefine.h
@@ -954,3 +1006,37 @@ visual_odometry/CMakeFiles/image_sub.dir/src/orb_features_cuda.cpp.o
  /usr/local/include/opencv4/opencv2/videoio.hpp
  /usr/local/include/opencv4/opencv2/xfeatures2d.hpp
  /usr/local/include/opencv4/opencv2/xfeatures2d/nonfree.hpp
+visual_odometry/CMakeFiles/image_sub.dir/src/vfc.cpp.o
+ /home/action/vo_test03/src/visual_odometry/include/visual_odometry/vfc.h
+ /home/action/vo_test03/src/visual_odometry/src/vfc.cpp
+ /usr/local/include/opencv4/opencv2/core.hpp
+ /usr/local/include/opencv4/opencv2/core/base.hpp
+ /usr/local/include/opencv4/opencv2/core/bufferpool.hpp
+ /usr/local/include/opencv4/opencv2/core/check.hpp
+ /usr/local/include/opencv4/opencv2/core/core.hpp
+ /usr/local/include/opencv4/opencv2/core/cv_cpu_dispatch.h
+ /usr/local/include/opencv4/opencv2/core/cv_cpu_helper.h
+ /usr/local/include/opencv4/opencv2/core/cvdef.h
+ /usr/local/include/opencv4/opencv2/core/cvstd.hpp
+ /usr/local/include/opencv4/opencv2/core/cvstd.inl.hpp
+ /usr/local/include/opencv4/opencv2/core/cvstd_wrapper.hpp
+ /usr/local/include/opencv4/opencv2/core/fast_math.hpp
+ /usr/local/include/opencv4/opencv2/core/hal/interface.h
+ /usr/local/include/opencv4/opencv2/core/hal/msa_macros.h
+ /usr/local/include/opencv4/opencv2/core/mat.hpp
+ /usr/local/include/opencv4/opencv2/core/mat.inl.hpp
+ /usr/local/include/opencv4/opencv2/core/matx.hpp
+ /usr/local/include/opencv4/opencv2/core/neon_utils.hpp
+ /usr/local/include/opencv4/opencv2/core/operations.hpp
+ /usr/local/include/opencv4/opencv2/core/optim.hpp
+ /usr/local/include/opencv4/opencv2/core/ovx.hpp
+ /usr/local/include/opencv4/opencv2/core/persistence.hpp
+ /usr/local/include/opencv4/opencv2/core/saturate.hpp
+ /usr/local/include/opencv4/opencv2/core/traits.hpp
+ /usr/local/include/opencv4/opencv2/core/types.hpp
+ /usr/local/include/opencv4/opencv2/core/utility.hpp
+ /usr/local/include/opencv4/opencv2/core/utils/instrumentation.hpp
+ /usr/local/include/opencv4/opencv2/core/utils/tls.hpp
+ /usr/local/include/opencv4/opencv2/core/version.hpp
+ /usr/local/include/opencv4/opencv2/core/vsx_utils.hpp
+ /usr/local/include/opencv4/opencv2/opencv_modules.hpp

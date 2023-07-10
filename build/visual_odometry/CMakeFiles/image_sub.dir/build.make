@@ -122,13 +122,41 @@ visual_odometry/CMakeFiles/image_sub.dir/IMU/imu.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/image_sub.dir/IMU/imu.cpp.s"
 	cd /home/action/vo_test03/build/visual_odometry && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/action/vo_test03/src/visual_odometry/IMU/imu.cpp -o CMakeFiles/image_sub.dir/IMU/imu.cpp.s
 
+visual_odometry/CMakeFiles/image_sub.dir/src/orb_extractor.cpp.o: visual_odometry/CMakeFiles/image_sub.dir/flags.make
+visual_odometry/CMakeFiles/image_sub.dir/src/orb_extractor.cpp.o: /home/action/vo_test03/src/visual_odometry/src/orb_extractor.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/action/vo_test03/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object visual_odometry/CMakeFiles/image_sub.dir/src/orb_extractor.cpp.o"
+	cd /home/action/vo_test03/build/visual_odometry && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/image_sub.dir/src/orb_extractor.cpp.o -c /home/action/vo_test03/src/visual_odometry/src/orb_extractor.cpp
+
+visual_odometry/CMakeFiles/image_sub.dir/src/orb_extractor.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/image_sub.dir/src/orb_extractor.cpp.i"
+	cd /home/action/vo_test03/build/visual_odometry && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/action/vo_test03/src/visual_odometry/src/orb_extractor.cpp > CMakeFiles/image_sub.dir/src/orb_extractor.cpp.i
+
+visual_odometry/CMakeFiles/image_sub.dir/src/orb_extractor.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/image_sub.dir/src/orb_extractor.cpp.s"
+	cd /home/action/vo_test03/build/visual_odometry && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/action/vo_test03/src/visual_odometry/src/orb_extractor.cpp -o CMakeFiles/image_sub.dir/src/orb_extractor.cpp.s
+
+visual_odometry/CMakeFiles/image_sub.dir/src/vfc.cpp.o: visual_odometry/CMakeFiles/image_sub.dir/flags.make
+visual_odometry/CMakeFiles/image_sub.dir/src/vfc.cpp.o: /home/action/vo_test03/src/visual_odometry/src/vfc.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/action/vo_test03/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object visual_odometry/CMakeFiles/image_sub.dir/src/vfc.cpp.o"
+	cd /home/action/vo_test03/build/visual_odometry && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/image_sub.dir/src/vfc.cpp.o -c /home/action/vo_test03/src/visual_odometry/src/vfc.cpp
+
+visual_odometry/CMakeFiles/image_sub.dir/src/vfc.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/image_sub.dir/src/vfc.cpp.i"
+	cd /home/action/vo_test03/build/visual_odometry && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/action/vo_test03/src/visual_odometry/src/vfc.cpp > CMakeFiles/image_sub.dir/src/vfc.cpp.i
+
+visual_odometry/CMakeFiles/image_sub.dir/src/vfc.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/image_sub.dir/src/vfc.cpp.s"
+	cd /home/action/vo_test03/build/visual_odometry && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/action/vo_test03/src/visual_odometry/src/vfc.cpp -o CMakeFiles/image_sub.dir/src/vfc.cpp.s
+
 # Object files for target image_sub
 image_sub_OBJECTS = \
 "CMakeFiles/image_sub.dir/src/image_sub.cpp.o" \
 "CMakeFiles/image_sub.dir/src/coordCaculate.cpp.o" \
 "CMakeFiles/image_sub.dir/src/orb_features_cuda.cpp.o" \
 "CMakeFiles/image_sub.dir/src/CameraParameter.cpp.o" \
-"CMakeFiles/image_sub.dir/IMU/imu.cpp.o"
+"CMakeFiles/image_sub.dir/IMU/imu.cpp.o" \
+"CMakeFiles/image_sub.dir/src/orb_extractor.cpp.o" \
+"CMakeFiles/image_sub.dir/src/vfc.cpp.o"
 
 # External object files for target image_sub
 image_sub_EXTERNAL_OBJECTS =
@@ -138,6 +166,8 @@ image_sub_EXTERNAL_OBJECTS =
 /home/action/vo_test03/devel/lib/visual_odometry/image_sub: visual_odometry/CMakeFiles/image_sub.dir/src/orb_features_cuda.cpp.o
 /home/action/vo_test03/devel/lib/visual_odometry/image_sub: visual_odometry/CMakeFiles/image_sub.dir/src/CameraParameter.cpp.o
 /home/action/vo_test03/devel/lib/visual_odometry/image_sub: visual_odometry/CMakeFiles/image_sub.dir/IMU/imu.cpp.o
+/home/action/vo_test03/devel/lib/visual_odometry/image_sub: visual_odometry/CMakeFiles/image_sub.dir/src/orb_extractor.cpp.o
+/home/action/vo_test03/devel/lib/visual_odometry/image_sub: visual_odometry/CMakeFiles/image_sub.dir/src/vfc.cpp.o
 /home/action/vo_test03/devel/lib/visual_odometry/image_sub: visual_odometry/CMakeFiles/image_sub.dir/build.make
 /home/action/vo_test03/devel/lib/visual_odometry/image_sub: /usr/local/lib/libopencv_gapi.so.4.5.4
 /home/action/vo_test03/devel/lib/visual_odometry/image_sub: /usr/local/lib/libopencv_stitching.so.4.5.4
@@ -304,7 +334,7 @@ image_sub_EXTERNAL_OBJECTS =
 /home/action/vo_test03/devel/lib/visual_odometry/image_sub: /usr/local/lib/libopencv_core.so.4.5.4
 /home/action/vo_test03/devel/lib/visual_odometry/image_sub: /usr/local/lib/libopencv_cudev.so.4.5.4
 /home/action/vo_test03/devel/lib/visual_odometry/image_sub: visual_odometry/CMakeFiles/image_sub.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/action/vo_test03/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable /home/action/vo_test03/devel/lib/visual_odometry/image_sub"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/action/vo_test03/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable /home/action/vo_test03/devel/lib/visual_odometry/image_sub"
 	cd /home/action/vo_test03/build/visual_odometry && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/image_sub.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

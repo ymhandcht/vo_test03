@@ -254,6 +254,7 @@ set(CMAKE_DEPEND_INFO_FILES
   "visual_odometry/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/DependInfo.cmake"
   "visual_odometry/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/DependInfo.cmake"
   "visual_odometry/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/DependInfo.cmake"
+  "visual_odometry/CMakeFiles/main.dir/DependInfo.cmake"
   "visual_odometry/CMakeFiles/geometry_msgs_generate_messages_eus.dir/DependInfo.cmake"
   "visual_odometry/CMakeFiles/std_msgs_generate_messages_nodejs.dir/DependInfo.cmake"
   "visual_odometry/CMakeFiles/image_pub.dir/DependInfo.cmake"

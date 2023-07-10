@@ -11,99 +11,246 @@
 #include<coordCaculate.h>
 #include<orb_features_cuda.h>
 
-
+#include <eigen3/Eigen/Dense>
+#include <eigen3/Eigen/Core>
 using namespace cv;
 using namespace std;
 using namespace XIAOC;
 
 
-int main(int argc,char **argv)
-{
-    ros::init(argc, argv, "main");
-    MindVisionInit mindvision;
-    mindvision.init();
+// int main(int argc,char **argv)
+// {
+//     ros::init(argc, argv, "main");
+//     MindVisionInit mindvision;
+//     mindvision.init();
 
-    int nfeatures = 1000;
-    int nlevels = 1;
-    float fscaleFactor = 1.0;
-    float fIniThFAST = 40;
-    float fMinThFAST = 10;
+//     int nfeatures = 1000;
+//     int nlevels = 1;
+//     float fscaleFactor = 1.0;
+//     float fIniThFAST = 40;
+//     float fMinThFAST = 10;
 
-    Mat imagesrc = mindvision.dstImage;
-    Mat imagecur = imagesrc;
+//     Mat imagesrc = mindvision.dstImage;
+//     Mat imagecur = imagesrc;
 
-    Point3f realCoor(0.0,0.0,0.0);
-    Point3f lastcastCoord(downWidth / 2, downHeigth / 2, 0); // 图像坐标中心点
+//     Point3f realCoor(0.0,0.0,0.0);
+//     Point3f lastcastCoord(downWidth / 2, downHeigth / 2, 0); // 图像坐标中心点
 
     
-     while(ros::ok())
-    {
-        mindvision.updateImage();
-        imagesrc = mindvision.dstImage;
-        Mat grayImgsrc, mask;
-        cv::cvtColor( imagesrc, grayImgsrc, 6 );
-        Mat grayImgcur,maskcur;
-        cv::cvtColor( imagecur, grayImgcur, 6 );
-        ORBextractor *pORBextractor;
-        pORBextractor = new ORBextractor( nfeatures, fscaleFactor, nlevels, fIniThFAST, fMinThFAST );
-        Mat srcdesc;
-        vector<KeyPoint> srckps;
-        (*pORBextractor)( grayImgsrc, mask, srckps, srcdesc );
-        Mat curdesc;
-        vector<KeyPoint> curkps;
-        (*pORBextractor)( grayImgcur, maskcur, curkps, curdesc );
-         BFMatcher matcher_bf(NORM_HAMMING, true); //使用汉明距离度量二进制描述子，允许交叉验证
-        vector<DMatch> Matches_bf;
-        matcher_bf.match(srcdesc, curdesc, Matches_bf);
-        if(Matches_bf.size() == 0)
-            cout << "no match" << endl;
+//      while(ros::ok())
+//     {
+//         mindvision.updateImage();
+//         imagesrc = mindvision.dstImage;
+//         Mat grayImgsrc, mask;
+//         cv::cvtColor( imagesrc, grayImgsrc, 6 );
+//         Mat grayImgcur,maskcur;
+//         cv::cvtColor( imagecur, grayImgcur, 6 );
+//         ORBextractor *pORBextractor;
+//         pORBextractor = new ORBextractor( nfeatures, fscaleFactor, nlevels, fIniThFAST, fMinThFAST );
+//         Mat srcdesc;
+//         vector<KeyPoint> srckps;
+//         (*pORBextractor)( grayImgsrc, mask, srckps, srcdesc );
+//         Mat curdesc;
+//         vector<KeyPoint> curkps;
+//         (*pORBextractor)( grayImgcur, maskcur, curkps, curdesc );
+//          BFMatcher matcher_bf(NORM_HAMMING, true); //使用汉明距离度量二进制描述子，允许交叉验证
+//         vector<DMatch> Matches_bf;
+//         matcher_bf.match(srcdesc, curdesc, Matches_bf);
+//         if(Matches_bf.size() == 0)
+//             cout << "no match" << endl;
 
-        vector<Point2f> X;
-        vector<Point2f> Y;
-        X.clear();
-        Y.clear();
+//         vector<Point2f> X;
+//         vector<Point2f> Y;
+//         X.clear();
+//         Y.clear();
 
-        for(int i=0;i<Matches_bf.size();i++){
-            int index1 = Matches_bf.at(i).queryIdx;
-            int index2 = Matches_bf.at(i).trainIdx;
-            X.push_back(srckps.at(index1).pt);
-            Y.push_back(curkps.at(index2).pt);
-        }
+//         for(int i=0;i<Matches_bf.size();i++){
+//             int index1 = Matches_bf.at(i).queryIdx;
+//             int index2 = Matches_bf.at(i).trainIdx;
+//             X.push_back(srckps.at(index1).pt);
+//             Y.push_back(curkps.at(index2).pt);
+//         }
 
-        VFC myvfc;
-        myvfc.setData(X, Y);
-        myvfc.optimize();
-        vector<int> matchIdx = myvfc.obtainCorrectMatch();
+//         VFC myvfc;
+//         myvfc.setData(X, Y);
+//         myvfc.optimize();
+//         vector<int> matchIdx = myvfc.obtainCorrectMatch();
 
-        // 筛选正确的匹配
-        std::vector< DMatch > Matches_VFC;
-        for (unsigned int i = 0; i < matchIdx.size(); i++) {
-        int idx = matchIdx[i];
-            Matches_VFC.push_back(Matches_bf[idx]);
-        }
+//         // 筛选正确的匹配
+//         std::vector< DMatch > Matches_VFC;
+//         for (unsigned int i = 0; i < matchIdx.size(); i++) {
+//         int idx = matchIdx[i];
+//             Matches_VFC.push_back(Matches_bf[idx]);
+//         }
 
-        //cout << Matches_VFC.size() << endl;
+//         //cout << Matches_VFC.size() << endl;
 
-        CoordCaculate cc;
-        cc.initCoordCaculate();
-        //将匹配的特征点放到容器里 分别存放第一幅和第二幅图像匹配的特征点
-        cc.storageFeaturePoints(Matches_VFC,srckps,curkps);
+//         CoordCaculate cc;
+//         cc.initCoordCaculate();
+//         //将匹配的特征点放到容器里 分别存放第一幅和第二幅图像匹配的特征点
+//         cc.storageFeaturePoints(Matches_VFC,srckps,curkps);
       
-        cc.getAllMappedPoints();
+//         cc.getAllMappedPoints();
 
-        deque<Point3f> result = cc.mappedPoints;
-        cc.filterMappedPoints();
+//         deque<Point3f> result = cc.mappedPoints;
+//         cc.filterMappedPoints();
       
-        Point3f coord = getNowCoord(lastcastCoord, cc.filterPoints);
+//         Point3f coord = getNowCoord(lastcastCoord, cc.filterPoints);
 
-        realCoor+=coord;  //得到真实坐标
+//         realCoor+=coord;  //得到真实坐标
 
-        cout << "当前坐标为：" << realCoor << "  "<< realCoor.x*realCoor.x+realCoor.y*realCoor.y << endl;
+//         cout << "当前坐标为：" << realCoor << "  "<< realCoor.x*realCoor.x+realCoor.y*realCoor.y << endl;
 
+//         imagecur = imagesrc;
+//     }
+// }
+
+/*PnP测试*/
+#define Z 0.53
+int main(int argc,char **argv)
+{
+        ros::init(argc,argv,"main");
+       
+        Mat K_Matrix = (Mat_<float>(3, 3) << Camera::camera_fx, 0, Camera::camera_cx, 0, Camera::camera_fy, 0, 0, 0, 1);
+        Mat distMatrix = (Mat_<float>(1, 5) << Camera::camera_k1, Camera::camera_k2, Camera::camera_k3, Camera::camera_p1, Camera::camera_p2);
+
+        Eigen::Matrix<float, 3, 3> R_result = Eigen::Matrix3f::Identity();
+        
+        Eigen::Matrix<float,3,1> t_result;
+        t_result<<0,0,0;
+
+        int nfeatures = 1000;
+        int nlevels = 1;
+        float fscaleFactor = 1.0;
+        float fIniThFAST = 40;
+        float fMinThFAST = 10;
+        string picName = "";
+        int picNum = 1;
+        MindVisionInit mindvision;
+        mindvision.init();
+        Mat imagesrc = mindvision.dstImage;
+        Mat imagecur = imagesrc;
+
+        while(ros::ok())
+        {
+            mindvision.updateImage();
+            imagesrc = mindvision.dstImage;
+            Mat grayImgsrc, mask;
+            cv::cvtColor( imagesrc, grayImgsrc, 6 );
+            Mat grayImgcur,maskcur;
+            cv::cvtColor( imagecur, grayImgcur, 6 );
+            ORBextractor *pORBextractor;
+            pORBextractor = new ORBextractor( nfeatures, fscaleFactor, nlevels, fIniThFAST, fMinThFAST );
+            Mat srcdesc;
+            vector<KeyPoint> srckps;
+            (*pORBextractor)( grayImgsrc, mask, srckps, srcdesc );
+            Mat curdesc;
+            vector<KeyPoint> curkps;
+            (*pORBextractor)( grayImgcur, maskcur, curkps, curdesc );
+            BFMatcher matcher_bf(NORM_HAMMING, true); //使用汉明距离度量二进制描述子，允许交叉验证
+            vector<DMatch> Matches_bf;
+            matcher_bf.match(srcdesc, curdesc, Matches_bf);
+            if(Matches_bf.size() == 0)
+                cout << "no match" << endl;
+
+            vector<Point2f> X;
+            vector<Point2f> Y;
+            X.clear();
+            Y.clear();
+
+            for(int i=0;i<Matches_bf.size();i++){
+                int index1 = Matches_bf.at(i).queryIdx;
+                int index2 = Matches_bf.at(i).trainIdx;
+                X.push_back(srckps.at(index1).pt);
+                Y.push_back(curkps.at(index2).pt);
+            }
+
+            VFC myvfc;
+            myvfc.setData(X, Y);
+            myvfc.optimize();
+            vector<int> matchIdx = myvfc.obtainCorrectMatch();
+
+            // 筛选正确的匹配
+            std::vector< DMatch > Matches_VFC;
+            for (unsigned int i = 0; i < matchIdx.size(); i++) {
+                int idx = matchIdx[i];
+                Matches_VFC.push_back(Matches_bf[idx]);
+            }
+            //第一幅图像地图点
+            vector<cv::Point3f> vSrc_mappoints ;
+        
+            vector<cv::Point2f> vCur;
+            for (int i = 0; i < Matches_VFC.size(); ++i)
+            {
+                int index1 = Matches_VFC[i].queryIdx;
+                int index2 = Matches_VFC[i].trainIdx;
+                float x1 = srckps[index1].pt.x;
+                float y1 = srckps[index1].pt.y;
+            
+                float z1 = Z;
+                float x = z1 * (x1 - Camera::camera_cx) / Camera::camera_fx;
+                float y = z1 * (y1 - Camera::camera_cy) / Camera::camera_fy;
+                float z = z1;
+            
+                cv::Point3f v1(x, y, z);
+                float x2 = curkps[index2].pt.x;
+                float y2 = curkps[index2].pt.y;
+                cv::Point2f v2(x2, y2);
+                vCur.emplace_back(v2);
+                vSrc_mappoints.push_back(v1);
+       
+            // cout << vSrc_mappoints[i] << endl;
+            }
+            //第二幅图像像素点
+            Mat R,t;
+            cv::solvePnPRansac(vSrc_mappoints, vCur, K_Matrix, distMatrix, R, t);
+            Mat Rvec;
+            Mat_<float> Tvec;
+            R.convertTo(Rvec, CV_32F);  // 旋转向量转换格式
+            t.convertTo(Tvec, CV_32F); // 平移向量转换格式 
+
+            Mat_<float> rotMat(3, 3);
+            Rodrigues(Rvec, rotMat);
+            // 旋转向量转成旋转矩阵
+            // cout << "rotMat" << endl << rotMat << endl << endl;
+            // cout << t << endl;
+        
+
+        // Mat P_oc;
+        // P_oc = -rotMat.inv() * Tvec;
+        // // 求解相机的世界坐标，得出p_oc的第三个元素即相机到物体的距离即深度信息，单位是mm
+        // cout << "P_oc" << endl << P_oc << endl;
+        Eigen::Matrix<float, 3, 3> m1;
+        Eigen::Matrix<float, 3, 1> m2;
+        // cout << "R = " << R << endl;
+        //cout << "t = " << Tvec.at<float>(0,0) << endl;
+
+        for (int i = 0; i < 3; i++)
+        {
+            m2(i, 0) = Tvec.at<float>(i, 0);
+
+            for (int j = 0; j < 3; j++)
+            {
+                m1(i, j) = rotMat.at<float>(i, j);
+            }
+        }
+        R_result = m1*R_result;
+        t_result += m2;
+        
+        
+        
+        cout << "R_result = " << R_result << endl;
+        cout << "t_result = " << t_result << endl;
         imagecur = imagesrc;
-    }
+        }    
+        
+    
+        
 
-
+        
+        return 0;
+    
+}
     // -----grid based orb extractor
     
     // Mat grayImgsrc,mask;
@@ -282,6 +429,3 @@ int main(int argc,char **argv)
     // cv::imshow("Matches", matchImage);
     // cv::waitKey(0);
 
-
-    return 0;
-}

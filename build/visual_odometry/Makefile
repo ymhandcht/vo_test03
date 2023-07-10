@@ -603,6 +603,21 @@ rosgraph_msgs_generate_messages_nodejs/fast:
 .PHONY : rosgraph_msgs_generate_messages_nodejs/fast
 
 # Convenience name for target.
+visual_odometry/CMakeFiles/main.dir/rule:
+	cd /home/action/vo_test03/build && $(MAKE) -f CMakeFiles/Makefile2 visual_odometry/CMakeFiles/main.dir/rule
+.PHONY : visual_odometry/CMakeFiles/main.dir/rule
+
+# Convenience name for target.
+main: visual_odometry/CMakeFiles/main.dir/rule
+
+.PHONY : main
+
+# fast build rule for target.
+main/fast:
+	cd /home/action/vo_test03/build && $(MAKE) -f visual_odometry/CMakeFiles/main.dir/build.make visual_odometry/CMakeFiles/main.dir/build
+.PHONY : main/fast
+
+# Convenience name for target.
 visual_odometry/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule:
 	cd /home/action/vo_test03/build && $(MAKE) -f CMakeFiles/Makefile2 visual_odometry/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
 .PHONY : visual_odometry/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
@@ -656,6 +671,7 @@ IMU/imu.cpp.o:
 	cd /home/action/vo_test03/build && $(MAKE) -f visual_odometry/CMakeFiles/imu_data_pub.dir/build.make visual_odometry/CMakeFiles/imu_data_pub.dir/IMU/imu.cpp.o
 	cd /home/action/vo_test03/build && $(MAKE) -f visual_odometry/CMakeFiles/orb_average.dir/build.make visual_odometry/CMakeFiles/orb_average.dir/IMU/imu.cpp.o
 	cd /home/action/vo_test03/build && $(MAKE) -f visual_odometry/CMakeFiles/image_sub.dir/build.make visual_odometry/CMakeFiles/image_sub.dir/IMU/imu.cpp.o
+	cd /home/action/vo_test03/build && $(MAKE) -f visual_odometry/CMakeFiles/main.dir/build.make visual_odometry/CMakeFiles/main.dir/IMU/imu.cpp.o
 .PHONY : IMU/imu.cpp.o
 
 IMU/imu.i: IMU/imu.cpp.i
@@ -667,6 +683,7 @@ IMU/imu.cpp.i:
 	cd /home/action/vo_test03/build && $(MAKE) -f visual_odometry/CMakeFiles/imu_data_pub.dir/build.make visual_odometry/CMakeFiles/imu_data_pub.dir/IMU/imu.cpp.i
 	cd /home/action/vo_test03/build && $(MAKE) -f visual_odometry/CMakeFiles/orb_average.dir/build.make visual_odometry/CMakeFiles/orb_average.dir/IMU/imu.cpp.i
 	cd /home/action/vo_test03/build && $(MAKE) -f visual_odometry/CMakeFiles/image_sub.dir/build.make visual_odometry/CMakeFiles/image_sub.dir/IMU/imu.cpp.i
+	cd /home/action/vo_test03/build && $(MAKE) -f visual_odometry/CMakeFiles/main.dir/build.make visual_odometry/CMakeFiles/main.dir/IMU/imu.cpp.i
 .PHONY : IMU/imu.cpp.i
 
 IMU/imu.s: IMU/imu.cpp.s
@@ -678,6 +695,7 @@ IMU/imu.cpp.s:
 	cd /home/action/vo_test03/build && $(MAKE) -f visual_odometry/CMakeFiles/imu_data_pub.dir/build.make visual_odometry/CMakeFiles/imu_data_pub.dir/IMU/imu.cpp.s
 	cd /home/action/vo_test03/build && $(MAKE) -f visual_odometry/CMakeFiles/orb_average.dir/build.make visual_odometry/CMakeFiles/orb_average.dir/IMU/imu.cpp.s
 	cd /home/action/vo_test03/build && $(MAKE) -f visual_odometry/CMakeFiles/image_sub.dir/build.make visual_odometry/CMakeFiles/image_sub.dir/IMU/imu.cpp.s
+	cd /home/action/vo_test03/build && $(MAKE) -f visual_odometry/CMakeFiles/main.dir/build.make visual_odometry/CMakeFiles/main.dir/IMU/imu.cpp.s
 .PHONY : IMU/imu.cpp.s
 
 IMU/imu_data_pub.o: IMU/imu_data_pub.cpp.o
@@ -715,6 +733,7 @@ src/CameraParameter.o: src/CameraParameter.cpp.o
 src/CameraParameter.cpp.o:
 	cd /home/action/vo_test03/build && $(MAKE) -f visual_odometry/CMakeFiles/orb_average.dir/build.make visual_odometry/CMakeFiles/orb_average.dir/src/CameraParameter.cpp.o
 	cd /home/action/vo_test03/build && $(MAKE) -f visual_odometry/CMakeFiles/image_sub.dir/build.make visual_odometry/CMakeFiles/image_sub.dir/src/CameraParameter.cpp.o
+	cd /home/action/vo_test03/build && $(MAKE) -f visual_odometry/CMakeFiles/main.dir/build.make visual_odometry/CMakeFiles/main.dir/src/CameraParameter.cpp.o
 	cd /home/action/vo_test03/build && $(MAKE) -f visual_odometry/CMakeFiles/image_pub.dir/build.make visual_odometry/CMakeFiles/image_pub.dir/src/CameraParameter.cpp.o
 .PHONY : src/CameraParameter.cpp.o
 
@@ -726,6 +745,7 @@ src/CameraParameter.i: src/CameraParameter.cpp.i
 src/CameraParameter.cpp.i:
 	cd /home/action/vo_test03/build && $(MAKE) -f visual_odometry/CMakeFiles/orb_average.dir/build.make visual_odometry/CMakeFiles/orb_average.dir/src/CameraParameter.cpp.i
 	cd /home/action/vo_test03/build && $(MAKE) -f visual_odometry/CMakeFiles/image_sub.dir/build.make visual_odometry/CMakeFiles/image_sub.dir/src/CameraParameter.cpp.i
+	cd /home/action/vo_test03/build && $(MAKE) -f visual_odometry/CMakeFiles/main.dir/build.make visual_odometry/CMakeFiles/main.dir/src/CameraParameter.cpp.i
 	cd /home/action/vo_test03/build && $(MAKE) -f visual_odometry/CMakeFiles/image_pub.dir/build.make visual_odometry/CMakeFiles/image_pub.dir/src/CameraParameter.cpp.i
 .PHONY : src/CameraParameter.cpp.i
 
@@ -737,6 +757,7 @@ src/CameraParameter.s: src/CameraParameter.cpp.s
 src/CameraParameter.cpp.s:
 	cd /home/action/vo_test03/build && $(MAKE) -f visual_odometry/CMakeFiles/orb_average.dir/build.make visual_odometry/CMakeFiles/orb_average.dir/src/CameraParameter.cpp.s
 	cd /home/action/vo_test03/build && $(MAKE) -f visual_odometry/CMakeFiles/image_sub.dir/build.make visual_odometry/CMakeFiles/image_sub.dir/src/CameraParameter.cpp.s
+	cd /home/action/vo_test03/build && $(MAKE) -f visual_odometry/CMakeFiles/main.dir/build.make visual_odometry/CMakeFiles/main.dir/src/CameraParameter.cpp.s
 	cd /home/action/vo_test03/build && $(MAKE) -f visual_odometry/CMakeFiles/image_pub.dir/build.make visual_odometry/CMakeFiles/image_pub.dir/src/CameraParameter.cpp.s
 .PHONY : src/CameraParameter.cpp.s
 
@@ -748,6 +769,7 @@ src/coordCaculate.o: src/coordCaculate.cpp.o
 src/coordCaculate.cpp.o:
 	cd /home/action/vo_test03/build && $(MAKE) -f visual_odometry/CMakeFiles/orb_average.dir/build.make visual_odometry/CMakeFiles/orb_average.dir/src/coordCaculate.cpp.o
 	cd /home/action/vo_test03/build && $(MAKE) -f visual_odometry/CMakeFiles/image_sub.dir/build.make visual_odometry/CMakeFiles/image_sub.dir/src/coordCaculate.cpp.o
+	cd /home/action/vo_test03/build && $(MAKE) -f visual_odometry/CMakeFiles/main.dir/build.make visual_odometry/CMakeFiles/main.dir/src/coordCaculate.cpp.o
 .PHONY : src/coordCaculate.cpp.o
 
 src/coordCaculate.i: src/coordCaculate.cpp.i
@@ -758,6 +780,7 @@ src/coordCaculate.i: src/coordCaculate.cpp.i
 src/coordCaculate.cpp.i:
 	cd /home/action/vo_test03/build && $(MAKE) -f visual_odometry/CMakeFiles/orb_average.dir/build.make visual_odometry/CMakeFiles/orb_average.dir/src/coordCaculate.cpp.i
 	cd /home/action/vo_test03/build && $(MAKE) -f visual_odometry/CMakeFiles/image_sub.dir/build.make visual_odometry/CMakeFiles/image_sub.dir/src/coordCaculate.cpp.i
+	cd /home/action/vo_test03/build && $(MAKE) -f visual_odometry/CMakeFiles/main.dir/build.make visual_odometry/CMakeFiles/main.dir/src/coordCaculate.cpp.i
 .PHONY : src/coordCaculate.cpp.i
 
 src/coordCaculate.s: src/coordCaculate.cpp.s
@@ -768,6 +791,7 @@ src/coordCaculate.s: src/coordCaculate.cpp.s
 src/coordCaculate.cpp.s:
 	cd /home/action/vo_test03/build && $(MAKE) -f visual_odometry/CMakeFiles/orb_average.dir/build.make visual_odometry/CMakeFiles/orb_average.dir/src/coordCaculate.cpp.s
 	cd /home/action/vo_test03/build && $(MAKE) -f visual_odometry/CMakeFiles/image_sub.dir/build.make visual_odometry/CMakeFiles/image_sub.dir/src/coordCaculate.cpp.s
+	cd /home/action/vo_test03/build && $(MAKE) -f visual_odometry/CMakeFiles/main.dir/build.make visual_odometry/CMakeFiles/main.dir/src/coordCaculate.cpp.s
 .PHONY : src/coordCaculate.cpp.s
 
 src/deblurCV.o: src/deblurCV.cpp.o
@@ -878,6 +902,33 @@ src/image_sub.cpp.s:
 	cd /home/action/vo_test03/build && $(MAKE) -f visual_odometry/CMakeFiles/image_sub.dir/build.make visual_odometry/CMakeFiles/image_sub.dir/src/image_sub.cpp.s
 .PHONY : src/image_sub.cpp.s
 
+src/main.o: src/main.cpp.o
+
+.PHONY : src/main.o
+
+# target to build an object file
+src/main.cpp.o:
+	cd /home/action/vo_test03/build && $(MAKE) -f visual_odometry/CMakeFiles/main.dir/build.make visual_odometry/CMakeFiles/main.dir/src/main.cpp.o
+.PHONY : src/main.cpp.o
+
+src/main.i: src/main.cpp.i
+
+.PHONY : src/main.i
+
+# target to preprocess a source file
+src/main.cpp.i:
+	cd /home/action/vo_test03/build && $(MAKE) -f visual_odometry/CMakeFiles/main.dir/build.make visual_odometry/CMakeFiles/main.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
+
+src/main.s: src/main.cpp.s
+
+.PHONY : src/main.s
+
+# target to generate assembly for a file
+src/main.cpp.s:
+	cd /home/action/vo_test03/build && $(MAKE) -f visual_odometry/CMakeFiles/main.dir/build.make visual_odometry/CMakeFiles/main.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
+
 src/mindVision_init.o: src/mindVision_init.cpp.o
 
 .PHONY : src/mindVision_init.o
@@ -885,6 +936,7 @@ src/mindVision_init.o: src/mindVision_init.cpp.o
 # target to build an object file
 src/mindVision_init.cpp.o:
 	cd /home/action/vo_test03/build && $(MAKE) -f visual_odometry/CMakeFiles/orb_average.dir/build.make visual_odometry/CMakeFiles/orb_average.dir/src/mindVision_init.cpp.o
+	cd /home/action/vo_test03/build && $(MAKE) -f visual_odometry/CMakeFiles/main.dir/build.make visual_odometry/CMakeFiles/main.dir/src/mindVision_init.cpp.o
 	cd /home/action/vo_test03/build && $(MAKE) -f visual_odometry/CMakeFiles/image_pub.dir/build.make visual_odometry/CMakeFiles/image_pub.dir/src/mindVision_init.cpp.o
 .PHONY : src/mindVision_init.cpp.o
 
@@ -895,6 +947,7 @@ src/mindVision_init.i: src/mindVision_init.cpp.i
 # target to preprocess a source file
 src/mindVision_init.cpp.i:
 	cd /home/action/vo_test03/build && $(MAKE) -f visual_odometry/CMakeFiles/orb_average.dir/build.make visual_odometry/CMakeFiles/orb_average.dir/src/mindVision_init.cpp.i
+	cd /home/action/vo_test03/build && $(MAKE) -f visual_odometry/CMakeFiles/main.dir/build.make visual_odometry/CMakeFiles/main.dir/src/mindVision_init.cpp.i
 	cd /home/action/vo_test03/build && $(MAKE) -f visual_odometry/CMakeFiles/image_pub.dir/build.make visual_odometry/CMakeFiles/image_pub.dir/src/mindVision_init.cpp.i
 .PHONY : src/mindVision_init.cpp.i
 
@@ -905,6 +958,7 @@ src/mindVision_init.s: src/mindVision_init.cpp.s
 # target to generate assembly for a file
 src/mindVision_init.cpp.s:
 	cd /home/action/vo_test03/build && $(MAKE) -f visual_odometry/CMakeFiles/orb_average.dir/build.make visual_odometry/CMakeFiles/orb_average.dir/src/mindVision_init.cpp.s
+	cd /home/action/vo_test03/build && $(MAKE) -f visual_odometry/CMakeFiles/main.dir/build.make visual_odometry/CMakeFiles/main.dir/src/mindVision_init.cpp.s
 	cd /home/action/vo_test03/build && $(MAKE) -f visual_odometry/CMakeFiles/image_pub.dir/build.make visual_odometry/CMakeFiles/image_pub.dir/src/mindVision_init.cpp.s
 .PHONY : src/mindVision_init.cpp.s
 
@@ -942,6 +996,7 @@ src/orb_extractor.o: src/orb_extractor.cpp.o
 # target to build an object file
 src/orb_extractor.cpp.o:
 	cd /home/action/vo_test03/build && $(MAKE) -f visual_odometry/CMakeFiles/orb_average.dir/build.make visual_odometry/CMakeFiles/orb_average.dir/src/orb_extractor.cpp.o
+	cd /home/action/vo_test03/build && $(MAKE) -f visual_odometry/CMakeFiles/image_sub.dir/build.make visual_odometry/CMakeFiles/image_sub.dir/src/orb_extractor.cpp.o
 .PHONY : src/orb_extractor.cpp.o
 
 src/orb_extractor.i: src/orb_extractor.cpp.i
@@ -951,6 +1006,7 @@ src/orb_extractor.i: src/orb_extractor.cpp.i
 # target to preprocess a source file
 src/orb_extractor.cpp.i:
 	cd /home/action/vo_test03/build && $(MAKE) -f visual_odometry/CMakeFiles/orb_average.dir/build.make visual_odometry/CMakeFiles/orb_average.dir/src/orb_extractor.cpp.i
+	cd /home/action/vo_test03/build && $(MAKE) -f visual_odometry/CMakeFiles/image_sub.dir/build.make visual_odometry/CMakeFiles/image_sub.dir/src/orb_extractor.cpp.i
 .PHONY : src/orb_extractor.cpp.i
 
 src/orb_extractor.s: src/orb_extractor.cpp.s
@@ -960,6 +1016,7 @@ src/orb_extractor.s: src/orb_extractor.cpp.s
 # target to generate assembly for a file
 src/orb_extractor.cpp.s:
 	cd /home/action/vo_test03/build && $(MAKE) -f visual_odometry/CMakeFiles/orb_average.dir/build.make visual_odometry/CMakeFiles/orb_average.dir/src/orb_extractor.cpp.s
+	cd /home/action/vo_test03/build && $(MAKE) -f visual_odometry/CMakeFiles/image_sub.dir/build.make visual_odometry/CMakeFiles/image_sub.dir/src/orb_extractor.cpp.s
 .PHONY : src/orb_extractor.cpp.s
 
 src/orb_features_cuda.o: src/orb_features_cuda.cpp.o
@@ -970,6 +1027,7 @@ src/orb_features_cuda.o: src/orb_features_cuda.cpp.o
 src/orb_features_cuda.cpp.o:
 	cd /home/action/vo_test03/build && $(MAKE) -f visual_odometry/CMakeFiles/orb_average.dir/build.make visual_odometry/CMakeFiles/orb_average.dir/src/orb_features_cuda.cpp.o
 	cd /home/action/vo_test03/build && $(MAKE) -f visual_odometry/CMakeFiles/image_sub.dir/build.make visual_odometry/CMakeFiles/image_sub.dir/src/orb_features_cuda.cpp.o
+	cd /home/action/vo_test03/build && $(MAKE) -f visual_odometry/CMakeFiles/main.dir/build.make visual_odometry/CMakeFiles/main.dir/src/orb_features_cuda.cpp.o
 	cd /home/action/vo_test03/build && $(MAKE) -f visual_odometry/CMakeFiles/image_pub.dir/build.make visual_odometry/CMakeFiles/image_pub.dir/src/orb_features_cuda.cpp.o
 .PHONY : src/orb_features_cuda.cpp.o
 
@@ -981,6 +1039,7 @@ src/orb_features_cuda.i: src/orb_features_cuda.cpp.i
 src/orb_features_cuda.cpp.i:
 	cd /home/action/vo_test03/build && $(MAKE) -f visual_odometry/CMakeFiles/orb_average.dir/build.make visual_odometry/CMakeFiles/orb_average.dir/src/orb_features_cuda.cpp.i
 	cd /home/action/vo_test03/build && $(MAKE) -f visual_odometry/CMakeFiles/image_sub.dir/build.make visual_odometry/CMakeFiles/image_sub.dir/src/orb_features_cuda.cpp.i
+	cd /home/action/vo_test03/build && $(MAKE) -f visual_odometry/CMakeFiles/main.dir/build.make visual_odometry/CMakeFiles/main.dir/src/orb_features_cuda.cpp.i
 	cd /home/action/vo_test03/build && $(MAKE) -f visual_odometry/CMakeFiles/image_pub.dir/build.make visual_odometry/CMakeFiles/image_pub.dir/src/orb_features_cuda.cpp.i
 .PHONY : src/orb_features_cuda.cpp.i
 
@@ -992,6 +1051,7 @@ src/orb_features_cuda.s: src/orb_features_cuda.cpp.s
 src/orb_features_cuda.cpp.s:
 	cd /home/action/vo_test03/build && $(MAKE) -f visual_odometry/CMakeFiles/orb_average.dir/build.make visual_odometry/CMakeFiles/orb_average.dir/src/orb_features_cuda.cpp.s
 	cd /home/action/vo_test03/build && $(MAKE) -f visual_odometry/CMakeFiles/image_sub.dir/build.make visual_odometry/CMakeFiles/image_sub.dir/src/orb_features_cuda.cpp.s
+	cd /home/action/vo_test03/build && $(MAKE) -f visual_odometry/CMakeFiles/main.dir/build.make visual_odometry/CMakeFiles/main.dir/src/orb_features_cuda.cpp.s
 	cd /home/action/vo_test03/build && $(MAKE) -f visual_odometry/CMakeFiles/image_pub.dir/build.make visual_odometry/CMakeFiles/image_pub.dir/src/orb_features_cuda.cpp.s
 .PHONY : src/orb_features_cuda.cpp.s
 
@@ -1029,6 +1089,7 @@ src/vfc.o: src/vfc.cpp.o
 # target to build an object file
 src/vfc.cpp.o:
 	cd /home/action/vo_test03/build && $(MAKE) -f visual_odometry/CMakeFiles/orb_average.dir/build.make visual_odometry/CMakeFiles/orb_average.dir/src/vfc.cpp.o
+	cd /home/action/vo_test03/build && $(MAKE) -f visual_odometry/CMakeFiles/image_sub.dir/build.make visual_odometry/CMakeFiles/image_sub.dir/src/vfc.cpp.o
 .PHONY : src/vfc.cpp.o
 
 src/vfc.i: src/vfc.cpp.i
@@ -1038,6 +1099,7 @@ src/vfc.i: src/vfc.cpp.i
 # target to preprocess a source file
 src/vfc.cpp.i:
 	cd /home/action/vo_test03/build && $(MAKE) -f visual_odometry/CMakeFiles/orb_average.dir/build.make visual_odometry/CMakeFiles/orb_average.dir/src/vfc.cpp.i
+	cd /home/action/vo_test03/build && $(MAKE) -f visual_odometry/CMakeFiles/image_sub.dir/build.make visual_odometry/CMakeFiles/image_sub.dir/src/vfc.cpp.i
 .PHONY : src/vfc.cpp.i
 
 src/vfc.s: src/vfc.cpp.s
@@ -1047,6 +1109,7 @@ src/vfc.s: src/vfc.cpp.s
 # target to generate assembly for a file
 src/vfc.cpp.s:
 	cd /home/action/vo_test03/build && $(MAKE) -f visual_odometry/CMakeFiles/orb_average.dir/build.make visual_odometry/CMakeFiles/orb_average.dir/src/vfc.cpp.s
+	cd /home/action/vo_test03/build && $(MAKE) -f visual_odometry/CMakeFiles/image_sub.dir/build.make visual_odometry/CMakeFiles/image_sub.dir/src/vfc.cpp.s
 .PHONY : src/vfc.cpp.s
 
 # Help Target
@@ -1091,6 +1154,7 @@ help:
 	@echo "... rosgraph_msgs_generate_messages_eus"
 	@echo "... rosgraph_msgs_generate_messages_lisp"
 	@echo "... rosgraph_msgs_generate_messages_nodejs"
+	@echo "... main"
 	@echo "... geometry_msgs_generate_messages_eus"
 	@echo "... std_msgs_generate_messages_nodejs"
 	@echo "... image_pub"
@@ -1118,6 +1182,9 @@ help:
 	@echo "... src/image_sub.o"
 	@echo "... src/image_sub.i"
 	@echo "... src/image_sub.s"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
 	@echo "... src/mindVision_init.o"
 	@echo "... src/mindVision_init.i"
 	@echo "... src/mindVision_init.s"

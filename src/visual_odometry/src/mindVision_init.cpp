@@ -136,7 +136,7 @@ bool MindVisionInit::init(void)
     CameraSetAeState(hCamera, false); //false 手动 true 自动
 
     //设置曝光时间
-    CameraSetExposureTime(hCamera, 10000); //单位us 28000 8000
+    CameraSetExposureTime(hCamera, 15000); //单位us 28000 8000
 
     //设置色温
     CameraSetPresetClrTemp(hCamera, 1);

@@ -5,7 +5,9 @@ file(REMOVE_RECURSE
   "CMakeFiles/image_sub.dir/src/CameraParameter.cpp.o"
   "CMakeFiles/image_sub.dir/src/coordCaculate.cpp.o"
   "CMakeFiles/image_sub.dir/src/image_sub.cpp.o"
+  "CMakeFiles/image_sub.dir/src/orb_extractor.cpp.o"
   "CMakeFiles/image_sub.dir/src/orb_features_cuda.cpp.o"
+  "CMakeFiles/image_sub.dir/src/vfc.cpp.o"
 )
 
 # Per-language clean rules from dependency scanning.

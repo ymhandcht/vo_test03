@@ -8,11 +8,12 @@ project(visual_odometry)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 
-# set(cv_bridge_DIR /usr/local/share/cv_bridge/cmake)  
+set(cv_bridge_DIR /usr/local/share/cv_bridge/cmake)
+set(Opencv_DIR /usr/local/share/opencv4)  
 find_package(cv_bridge REQUIRED)
 find_package(OpenCV REQUIRED)
 find_package(Eigen3 REQUIRED)
-# set(Opencv_DIR /usr/local/share/opencv4)
+
 find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
@@ -164,9 +165,9 @@ link_directories(home/action/vo_test03/devel/lib/**)
 ## Declare a C++ executable
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
-# add_executable(main src/main.cpp src/mindVision_init.cpp src/coordCaculate.cpp src/orb_features_cuda.cpp src/CameraParameter.cpp IMU/imu.cpp) 
+add_executable(main src/main.cpp src/mindVision_init.cpp src/coordCaculate.cpp src/orb_features_cuda.cpp src/CameraParameter.cpp IMU/imu.cpp) 
 add_executable(image_pub src/image_pub.cpp src/mindVision_init.cpp src/orb_features_cuda.cpp src/CameraParameter.cpp)
-add_executable(image_sub src/image_sub.cpp src/coordCaculate.cpp src/orb_features_cuda.cpp src/CameraParameter.cpp IMU/imu.cpp)
+add_executable(image_sub src/image_sub.cpp src/coordCaculate.cpp src/orb_features_cuda.cpp src/CameraParameter.cpp IMU/imu.cpp src/orb_extractor.cpp src/vfc.cpp)
 
 add_executable(deblurKernelx src/deblurKernelx.cpp)
 add_executable(deblurCV src/deblurCV.cpp)
@@ -194,9 +195,9 @@ add_executable(orb_average src/orb_average.cpp src/orb_extractor.cpp src/vfc.cpp
 #add_dependencies(${PROJECT_NAME}_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against${OpenCV_LIBRARIES}
-# target_link_libraries(main
-#   ${catkin_LIBRARIES} libMVSDK.so ${OpenCV_LIBRARIES}
-# )
+target_link_libraries(main
+  ${catkin_LIBRARIES} libMVSDK.so ${OpenCV_LIBRARIES}
+)
 target_link_libraries(image_pub
   ${catkin_LIBRARIES} libMVSDK.so ${OpenCV_LIBRARIES}
 )
